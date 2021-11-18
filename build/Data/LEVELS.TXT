@@ -9,7 +9,7 @@
 #
 
 set Koen's_Demo
-scene   data/scenes/howto.txt
+scene   data/scenes/howto.txt 
 file    data/levels/new-stage-1.txt
 next
 scene   data/scenes/ending.txt
