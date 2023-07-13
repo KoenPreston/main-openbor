@@ -10,6 +10,8 @@ void main()
       for( i = 0; i < models_cached; ++i ) {
         char model = getmodelproperty(i,2);
 
+        void bckground = getglobalvar("bckground");  
+        void bckground2 = getglobalvar("bckground2");
         if( model == "Royce" && C != 39 && set == 1) {
             changemodelproperty(i,4,0);
         }
@@ -47,9 +49,23 @@ void oncreate()
     setglobalvar("Load", C);
 
     setindexedvar(1, 0);
+    void Title1;    
+    void Title2;
+
+    Title1 = loadsprite("data/chars/misc/titlesprite/newbor-title-sprite.png"); 
+    Title2 = loadsprite("data/bgs/black.gif");
+        
+    setglobalvar("Title1", Title1);    
+    setglobalvar("Title2", Title2);
 }
 
 void ondestroy(){
+  void Title1 = getglobalvar("Title1");    
+  void Title2 = getglobalvar("Title2");    
+  free(Title1);    
+  free(Title2);    
+  setglobalvar("Title1", NULL());    
+  setglobalvar("Title2", NULL());
 }
 
 void fileskim(char Line, void Path)
